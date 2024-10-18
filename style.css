@@ -1,0 +1,491 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000000;
+  color: #333;
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+
+
+}
+
+header {
+  text-align: center;
+  background-color: #000000;
+  color: white;
+  padding: 20px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+  font-size: 25px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.icon-container {
+  margin: 20px 0;
+}
+
+.icon {
+  width: 120px;
+  height: 120px;
+  background-color: #0d355f;
+  border-radius: 50%;
+}
+
+h1 {
+  margin: 10px 0;
+}
+
+h3 {
+  margin: 5px 0;
+}
+
+section {
+  padding: 20px;
+  margin: 20px;
+  color: white;
+}
+
+#inicio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.code-container {
+  position: relative;
+  top: 20px;
+  color: #b2ff59;
+  font-family: monospace;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 100px;
+}
+
+.code-line {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+  font-size: 20px;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.sobre-mim {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+
+  align-items: center;
+
+  width: 80%;
+
+  max-width: 600px;
+
+  border: 2px solid #b2ff59;
+
+  border-radius: 10px;
+
+  padding: 20px;
+
+  text-align: center;
+
+  margin: 0 auto;
+  height: 320px;
+}
+
+.sobre-mim h2 {
+  font-size: 35px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.sobre-mim p {
+  font-size: 20px;
+}
+
+
+
+.habilidades-container {
+  opacity: 0;
+
+  transform: translateX(-100%);
+
+  transition: opacity 2.5s ease, transform 2.5s ease;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+}
+
+.habilidades-container.visible {
+  opacity: 1;
+
+  transform: translateX(0);
+
+}
+
+.habilidades-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+
+.habilidade-card {
+  display: flex;
+  align-items: center;
+  /* Alinha os ícones e o texto verticalmente */
+  background-color: #f0f0f0;
+  /* Fundo dos cards */
+  color: #0d355f;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  /* Cor do texto */
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+
+}
+
+.habilidade-card i {
+  margin-right: 10px;
+
+  font-size: 24px;
+}
+
+.projetos-container {
+  opacity: 0;
+  /* Inicialmente invisível */
+  transform: translateX(100%);
+  /* Mover para a direita */
+  transition: opacity 2.5s ease, transform 2.5s ease;
+  /* Transições */
+}
+
+.projetos-container.visible {
+  opacity: 1;
+  /* Torna visível */
+  transform: translateX(0);
+  /* Move para a posição original */
+}
+
+.titulo-projetos {
+
+  padding: 10px;
+
+  /* Alinha o texto à esquerda */
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  width: auto;
+  text-align: center;
+
+  /* Ajuste automático à largura do conteúdo */
+}
+
+.projetos-list {
+  display: flex;
+  /* Flexbox para alinhamento em linha */
+  flex-wrap: wrap;
+  /* Permite que os cards quebrem para a próxima linha se necessário */
+  justify-content: flex-start;
+  /* Alinha os cards à esquerda */
+  margin-left: 0;
+  /* Garante que não haja margem à esquerda */
+}
+
+.projeto-card {
+  background-color: #f0f0f0;
+  color: #0d355f;
+  margin: 10px;
+  /* Margem ao redor dos cards */
+  padding: 20px;
+  border-radius: 5px;
+  border: 3px solid #b2ff59;
+  cursor: pointer;
+  width: 200px;
+  /* Largura fixa para os cards */
+  text-align: center;
+}
+
+.title-projects {
+  font-size: 30px;
+  color: white;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+#slider {
+  position: relative;
+  width: 50%;
+  /* Aumentando a largura do slider */
+  height: 20vw;
+  /* Aumentando a altura */
+  margin: 0 auto;
+  /* Centraliza o slider */
+  font-family: 'Helvetica Neue', sans-serif;
+  perspective: 1400px;
+  transform-style: preserve-3d;
+
+  box-shadow: #b2ff59
+}
+
+input[type=radio] {
+  position: relative;
+  left: 50%;
+  width: 18px;
+  height: 18px;
+  margin: 0 20px 0 0;
+  /* Aumentando a margem à direita */
+  opacity: 0;
+  transform: translateX(-83px);
+  cursor: pointer;
+}
+
+#slider label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  color: white;
+  font-size: 80px;
+  /* Aumentando o tamanho da fonte */
+  font-weight: bold;
+  border-radius: 10px;
+  /* Bordas mais arredondadas */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 400ms ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* Sombra sutil */
+}
+
+/* Ajustes nos slides */
+#slide1 {
+  background-image: url(./img/Pokedex.png);
+  background-size: cover;
+  /* Cobre todo o slide */
+  background-position: center;
+  /* Centraliza a imagem */
+}
+
+#slide2 {
+  background-image: url(./img/Medalhas.png);
+}
+
+#slide3 {
+  background-image: url(./img/todo.png);
+}
+
+#slide4 {
+  background-image: url(./img/construcao.png);
+}
+
+#slide5 {
+  background-image: url(./img/construcao.png);
+}
+
+/* Slider Functionality */
+/* Active Slide */
+#s1:checked~#slide1,
+#s2:checked~#slide2,
+#s3:checked~#slide3,
+#s4:checked~#slide4,
+#s5:checked~#slide5 {
+  box-shadow: 0 13px 26px rgba(0, 0, 0, 0.3);
+  transform: translate3d(0%, 0, 0px);
+}
+
+/* Next Slide */
+#s1:checked~#slide2,
+#s2:checked~#slide3,
+#s3:checked~#slide4,
+#s4:checked~#slide5,
+#s5:checked~#slide1 {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  transform: translate3d(20%, 0, -100px);
+  /* Aumentando o espaçamento */
+
+}
+
+/* Next to Next Slide */
+#s1:checked~#slide3,
+#s2:checked~#slide4,
+#s3:checked~#slide5,
+#s4:checked~#slide1,
+#s5:checked~#slide2 {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  transform: translate3d(40%, 0, -250px);
+  /* Aumentando o espaçamento */
+}
+
+/* Previous to Previous Slide */
+#s1:checked~#slide4,
+#s2:checked~#slide5,
+#s3:checked~#slide1,
+#s4:checked~#slide2,
+#s5:checked~#slide3 {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+  transform: translate3d(-40%, 0, -250px);
+  /* Aumentando o espaçamento */
+}
+
+/* Previous Slide */
+#s1:checked~#slide5,
+#s2:checked~#slide1,
+#s3:checked~#slide2,
+#s4:checked~#slide3,
+#s5:checked~#slide4 {
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3);
+  transform: translate3d(-20%, 0, -100px);
+  /* Aumentando o espaçamento */
+}
+
+
+
+
+
+
+
+footer {
+  background-color: #4B3D31;
+  /* Cor de fundo */
+  padding: 20px;
+
+  text-align: center;
+  width: 100%;
+  margin-top: 100px;
+
+
+}
+
+footer a {
+  margin: 0 10px;
+
+  text-decoration: none;
+  color: #fff;
+
+}
+
+footer i {
+  font-size: 24px;
+  /* Tamanho dos ícones */
+  color: #fff;
+  /* Cor dos ícones */
+}
+
+footer h4 {
+  margin: 10px 0;
+  color: #fff;
+}
+
+footer p {
+  color: #fff;
+}
+
+
+/* Para telas menores que 600px */
+@media (max-width: 600px) {
+  nav ul li {
+    display: block;
+    /* Muda os itens do menu para coluna */
+    margin: 10px 0;
+    font-size: 20px;
+    /* Reduz o tamanho da fonte */
+  }
+
+  .habilidade-card {
+    flex-direction: column;
+    /* Alinha o ícone e texto verticalmente */
+    font-size: 16px;
+    /* Reduz o tamanho da fonte */
+  }
+
+  .sobre-mim,
+  .projeto-card {
+    width: 90%;
+    /* Ajusta a largura dos cards */
+  }
+
+  #slider {
+    width: 90%;
+    /* Ajusta a largura do slider */
+  }
+
+  .icon {
+    width: 80px;
+    /* Ajusta o tamanho do ícone */
+    height: 80px;
+    /* Ajusta o tamanho do ícone */
+  }
+
+  .title-projects {
+    font-size: 24px;
+    /* Reduz o tamanho da fonte */
+  }
+}
+
+/* Para telas menores que 400px */
+@media (max-width: 400px) {
+
+  h2,
+  h1 {
+    font-size: 24px;
+    /* Reduz o tamanho das fontes dos cabeçalhos */
+  }
+
+  .habilidade-card {
+    padding: 10px;
+    /* Reduz o padding */
+  }
+
+  .sobre-mim p {
+    font-size: 16px;
+    /* Ajusta o tamanho do texto */
+  }
+
+  footer h4 {
+    font-size: 20px;
+    /* Ajusta o tamanho da fonte do footer */
+  }
+
+  footer p {
+    font-size: 14px;
+    /* Ajusta o tamanho da fonte do footer */
+  }
+}
