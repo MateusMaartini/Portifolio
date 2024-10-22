@@ -1,9 +1,8 @@
 window.onload = function () {
   const lines = [
     'console.log("Bem-vindo ao meu portfólio!");',
-
-    'let skills = ["Red Team | ", "Pentesting ", "Cybersecurity", "Developer Software" ];',
-    'document.getElementById("Inicio").style.display = "block";',
+    'let skills = ["Red Team | ", "Pentesting ", "Cybersecurity", "Developer Software"];',
+    'document.getElementById("inicio").style.display = "block";', // Corrigido
   ];
 
   lines.forEach((line, index) => {
@@ -12,10 +11,9 @@ window.onload = function () {
       codeLine.className = "code-line";
       codeLine.textContent = line;
       document.querySelector(".code-container").appendChild(codeLine);
-    }, index * 2000); // Atraso de 2 segundos entre as linhas
+    }, index * 2000);
   });
 };
-
 //HABILIDADES
 // Seleciona a seção de habilidades
 
@@ -60,3 +58,5 @@ slideShow();
 console.log("Hello");
 
 //Terminal
+const hour = new Date().getHours();
+document.body.className = hour >= 18 || hour < 6 ? "dark-mode" : "light-mode";

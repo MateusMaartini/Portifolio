@@ -19,7 +19,7 @@ body {
 header {
   text-align: center;
   background-color: #000000;
-  color: white;
+  color: #d3d3d3;
   padding: 20px;
 }
 
@@ -35,7 +35,7 @@ nav ul li {
 }
 
 nav a {
-  color: white;
+  color: #2ecc71;
   text-decoration: none;
 }
 
@@ -61,7 +61,7 @@ h3 {
 section {
   padding: 20px;
   margin: 20px;
-  color: white;
+  color: #d3d3d3;
 }
 
 #inicio {
@@ -74,18 +74,25 @@ section {
 
 .code-container {
   position: relative;
-  top: 20px;
-  color: #b2ff59;
+  /* Mantém no fluxo */
+  top: -60px;
+  /* Zera a posição vertical */
+  color: #2ecc71;
   font-family: monospace;
   white-space: nowrap;
   overflow: hidden;
+  max-width: 1300px;
   height: 100px;
+  /* Defina uma altura fixa */
+
+
 }
 
 .code-line {
   opacity: 0;
   animation: fadeIn 1s forwards;
-  font-size: 20px;
+
+
 }
 
 @keyframes fadeIn {
@@ -103,25 +110,16 @@ section {
 .sobre-mim {
   display: flex;
   flex-direction: column;
-
-  justify-content: center;
-
   align-items: center;
-
   width: 80%;
-
   max-width: 600px;
-
-  border: 2px solid #b2ff59;
-
+  border: 2px solid #2ecc71;
   border-radius: 10px;
-
   padding: 20px;
-
   text-align: center;
+  margin-top: -100px;
+  /* Ajuste a margem superior para um valor menor */
 
-  margin: 0 auto;
-  height: 320px;
 }
 
 .sobre-mim h2 {
@@ -131,6 +129,7 @@ section {
 
 .sobre-mim p {
   font-size: 20px;
+  margin-top: -10px;
 }
 
 
@@ -168,15 +167,31 @@ section {
 .habilidade-card {
   display: flex;
   align-items: center;
-  /* Alinha os ícones e o texto verticalmente */
-  background-color: #f0f0f0;
-  /* Fundo dos cards */
-  color: #0d355f;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  /* Cor do texto */
+
+
+
+  background-color: #0d0d0d;
+
+
+
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  /* Sombra neon verde */
+
+
   margin: 10px;
-  padding: 20px;
-  border-radius: 5px;
+
+
+  font-weight: bold;
+
+
+  /* Sombra neon verde */
+  color: #fff;
+  animation: fadeIn 1s ease-in-out;
+
+
+
 
 }
 
@@ -383,7 +398,7 @@ input[type=radio] {
 
 
 footer {
-  background-color: #4B3D31;
+  background-color: #0d0d0d;
   /* Cor de fundo */
   padding: 20px;
 
@@ -419,27 +434,25 @@ footer p {
 }
 
 
-/* Para telas menores que 600px */
-@media (max-width: 600px) {
+
+
+
+
+@media (max-width: 768px) {
   nav ul li {
     display: block;
-    /* Muda os itens do menu para coluna */
+    /* Muda para coluna */
     margin: 10px 0;
     font-size: 20px;
-    /* Reduz o tamanho da fonte */
+    /* Ajusta o tamanho da fonte */
   }
 
-  .habilidade-card {
-    flex-direction: column;
-    /* Alinha o ícone e texto verticalmente */
-    font-size: 16px;
-    /* Reduz o tamanho da fonte */
-  }
-
-  .sobre-mim,
+  .habilidade-card,
   .projeto-card {
-    width: 90%;
-    /* Ajusta a largura dos cards */
+    width: 100%;
+    /* Faz os cards ocuparem 100% da largura */
+    max-width: 300px;
+    /* Limita a largura máxima */
   }
 
   #slider {
@@ -447,45 +460,125 @@ footer p {
     /* Ajusta a largura do slider */
   }
 
-  .icon {
-    width: 80px;
-    /* Ajusta o tamanho do ícone */
-    height: 80px;
-    /* Ajusta o tamanho do ícone */
+  .sobre-mim {
+    width: 90%;
+    /* Ajusta a largura */
+    height: auto;
+    /* Permite que a altura seja automática */
   }
 
-  .title-projects {
-    font-size: 24px;
-    /* Reduz o tamanho da fonte */
+  .code-container {
+    font-size: 16px;
+    /* Ajusta o tamanho da fonte */
+  }
+
+  footer {
+    padding: 10px;
+    /* Ajusta o padding do footer */
   }
 }
 
-/* Para telas menores que 400px */
-@media (max-width: 400px) {
-
-  h2,
+@media (max-width: 480px) {
   h1 {
     font-size: 24px;
-    /* Reduz o tamanho das fontes dos cabeçalhos */
+    /* Reduz o tamanho da fonte para h1 */
   }
 
-  .habilidade-card {
-    padding: 10px;
-    /* Reduz o padding */
+  .sobre-mim h2 {
+    font-size: 28px;
+    /* Ajusta o tamanho da fonte do título */
   }
 
   .sobre-mim p {
-    font-size: 16px;
-    /* Ajusta o tamanho do texto */
+    font-size: 18px;
+    /* Ajusta o tamanho da fonte do parágrafo */
+  }
+}
+
+/* Estilo básico da seção Red Team */
+.red-team-container {
+  background-color: #0d0d0d;
+  /* Fundo preto suave */
+  color: #e6e6e6;
+  /* Texto cinza claro */
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.3);
+  /* Sombra neon verde */
+  margin: 20px 0;
+  animation: fadeIn 1s ease-in-out;
+  margin-top: -70px;
+  height: 250px;
+}
+
+/* Título com um efeito de texto brilhante */
+.red-team-container h2 {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 36px;
+  color: #00ff00;
+  text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
+  margin-bottom: 20px;
+  animation: glow 7s infinite alternate;
+}
+
+/* Parágrafo */
+.red-team-container p {
+  line-height: 1.6;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+
+.ferramentas {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+}
+
+.tool-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  width: 150px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tool-card i {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #ff0000;
+  transition: color 0.3s;
+}
+
+/* Animações de hover */
+.tool-card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 10px #ff0000;
+}
+
+.tool-card:hover i {
+  color: #ff1100;
+}
+
+/* Animações */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
   }
 
-  footer h4 {
-    font-size: 20px;
-    /* Ajusta o tamanho da fonte do footer */
+  to {
+    opacity: 1;
   }
+}
 
-  footer p {
-    font-size: 14px;
-    /* Ajusta o tamanho da fonte do footer */
-  }
+
+#timeline {
+  padding: 20px;
+  background-color: #111;
+  border-radius: 10px;
 }
