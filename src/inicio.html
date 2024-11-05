@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meu portifolio</title>
+    <style>
+      /* Estilos básicos para o layout */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        background-color: #000;
+        color: #0f0;
+        font-family: monospace;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+
+      #terminal {
+        width: 80%;
+        max-width: 600px;
+        background: #000;
+        border: 2px solid #0f0;
+        padding: 20px;
+        text-align: left;
+        font-size: 1.2rem;
+        box-shadow: 0 0 20px rgba(0, 255, 0, 0.5);
+      }
+
+      #prompt {
+        margin-top: 10px;
+      }
+
+      /* Estilos para o efeito de digitação */
+      .typing {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: typing 2s steps(20, end) infinite;
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      /* Opções de resposta */
+      .option {
+        cursor: pointer;
+        color: #0f0;
+        margin-top: 10px;
+        display: inline-block;
+        padding: 5px;
+      }
+      .option:hover {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="terminal">
+      <div id="text">
+        <p>Bem-vindo ao Sistema. Deseja acessar o Portfólio?</p>
+        <p>(A) Sim, mostrar portfólio</p>
+        <p>(B) Não, Desligar!!</p>
+      </div>
+      <div id="prompt">Digite sua resposta: <span class="typing">_</span></div>
+    </div>
+    <script>
+      document.addEventListener("keypress", function (event) {
+        const response = event.key.toUpperCase();
+
+        if (response === "A") {
+          document.getElementById("text").innerHTML +=
+            "<p>Acessando o portfólio...</p>";
+          // Redirecionamento para a página de index.html
+          setTimeout(() => {
+            window.location.href = "/index.html";
+          }, 1000); // Redireciona após 1 segundo
+        } else if (response === "B") {
+          document.getElementById("text").innerHTML +=
+            "<p>Encerrando sessão...</p>";
+        }
+      });
+    </script>
+  </body>
+</html>

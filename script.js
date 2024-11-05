@@ -1,19 +1,13 @@
-window.onload = function () {
-  const lines = [
-    'console.log("Bem-vindo ao meu portfólio!");',
-    'let skills = ["Red Team | ", "Pentesting ", "Cybersecurity", "Developer Software"];',
-    'document.getElementById("inicio").style.display = "block";', // Corrigido
-  ];
-
-  lines.forEach((line, index) => {
-    setTimeout(() => {
-      const codeLine = document.createElement("div");
-      codeLine.className = "code-line";
-      codeLine.textContent = line;
-      document.querySelector(".code-container").appendChild(codeLine);
-    }, index * 2000);
-  });
-};
+function typeText(element, text, delay = 100) {
+  let i = 0;
+  const interval = setInterval(() => {
+    element.textContent += text.charAt(i);
+    i++;
+    if (i > text.length) clearInterval(interval);
+  }, delay);
+}
+const codeContainer = document.querySelector(".code-container");
+typeText(codeContainer, 'console.log("Bem-vindo ao meu portfólio!");');
 //HABILIDADES
 // Seleciona a seção de habilidades
 
@@ -57,6 +51,4 @@ slideShow();
 
 console.log("Hello");
 
-//Terminal
-const hour = new Date().getHours();
-document.body.className = hour >= 18 || hour < 6 ? "dark-mode" : "light-mode";
+//Footer
