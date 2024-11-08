@@ -260,7 +260,7 @@ section {
   border-radius: 5px;
   border: 3px solid #b2ff59;
   cursor: pointer;
-  width: 200px;
+
   /* Largura fixa para os cards */
   text-align: center;
 }
@@ -833,4 +833,124 @@ c
 
 .carousel .carousel-item-wrapper:has(.carousel-item:hover) .carousel-ground {
   opacity: 0.75;
+}
+
+
+
+@media (max-width: 768px) {
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+
+
+/* Carousel Responsivo */
+@media only screen and (max-width: 768px) {
+  .carousel {
+    --_diameter: 50%;
+  }
+}
+
+
+/* Footer - Responsividade */
+@media (max-width: 768px) {
+  footer {
+    padding: 15px;
+  }
+
+  footer div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer i {
+    font-size: 20px;
+    margin: 5px;
+  }
+
+  footer h4,
+  footer p {
+    font-size: 14px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  footer {
+    padding: 10px;
+  }
+
+  footer i {
+    font-size: 18px;
+  }
+
+  footer h4,
+  footer p {
+    font-size: 12px;
+  }
+}
+
+/* Projetos - Responsividade */
+@media (max-width: 768px) {
+  .projetos-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .projeto-card {
+    width: 90%;
+    max-width: 300px;
+    padding: 15px;
+  }
+}
+
+
+/* Slider - Responsividade */
+@media (max-width: 768px) {
+  #slider {
+    width: 80%;
+    height: auto;
+  }
+
+  #slider label {
+    font-size: 60px;
+    padding: 15px;
+  }
+
+  .slide-content {
+    gap: 8px;
+  }
+
+  .slide-content button {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  #slider {
+    width: 100%;
+  }
+
+  #slider label {
+    font-size: 50px;
+  }
+
+  .slide-content button {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+}
+
+button {
+  padding: 10px;
+  gap: 10px;
+  margin: 10px;
+  background-color: black;
+  font-weight: bold;
+  color: #fff;
 }

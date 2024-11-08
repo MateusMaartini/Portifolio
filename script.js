@@ -8,7 +8,7 @@ function typeText(element, text, delay = 100) {
 }
 const codeContainer = document.querySelector(".code-container");
 typeText(codeContainer, 'console.log("Bem-vindo ao meu portfólio!");');
-//HABILIDADES
+
 // Seleciona a seção de habilidades
 
 document.addEventListener("scroll", function () {
